@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from core.views import index, contact, test
 from django.conf import settings
 from django.conf.urls.static import static
@@ -9,6 +9,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', index, name='index'),
+    path('items/', include('item.urls')),
     path('contact/', contact, name='contact'),
     path('test/', test, name='test'),
     path('admin/', admin.site.urls),
